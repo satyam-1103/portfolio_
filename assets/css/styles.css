@@ -203,12 +203,30 @@ body.light-theme {
 
 /*=============== HEADER & NAV===============*/
 
+
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content  ;
+  padding: 1rem 1.2rem;
+  border: 1px solid grey;
+  position: fixed;
+  top: 50px;
+  left: 28%;
+  border-radius: 10px;
+  z-index: var(--z-modal);
   background-color: var(--body-color);
 }
 
@@ -681,6 +699,9 @@ body.light-theme {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
+  .warning {
+    display: none;
+  }
   .nav_menu {
     padding: 1rem 1.5rem;
   }
@@ -709,10 +730,19 @@ body.light-theme {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .warning {
+    display: none;
+  }
+}
+
 
 /* For medium devices */
 
 @media screen and (min-width: 576px) {
+  .warning {
+    display: none;
+  }
   .nav_menu {
     width: 328px;
     left: 0;
@@ -764,6 +794,10 @@ body.light-theme {
 /* For large devices */
 
 @media screen and (min-width: 992px) {
+  .warning {
+    display: flex;
+    margin: 0 auto;
+  }
   .container {
     margin-left: auto;
     margin-right: auto;
